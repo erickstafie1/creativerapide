@@ -14,7 +14,7 @@
     Cand fisierul exista, slotul il reda. Pana atunci ramane placeholder.
 
   CE MAI POTI EDITA (optional):
-    - Eticheta fiecarui clip (nisa/produs): atributul data-caption de pe carduri.
+    - Reclamele se afiseaza fara nume/eticheta (galerie curata).
     - Pretul este setat la 15 RON / creativa in sectiunea #pret.
   VIDEOCLIPURILE sunt deja in folderul "videos/" (clip-1.mp4 ... clip-8.mp4 + postere).
   =====================================================================
@@ -244,15 +244,15 @@
       <p>Apasă pe un clip pentru redare. Reclame reale, livrate clienților din nișa COD.</p>
     </div>
     <div class="grid" id="gallery">
-      <!-- 8 sloturi. EDIT: data-caption = nișa/produsul fiecărui clip -->
-      <div class="card" data-clip="1" data-caption="Skincare"></div>
-      <div class="card" data-clip="2" data-caption="Scule auto"></div>
-      <div class="card" data-clip="3" data-caption="Aparate auditive"></div>
-      <div class="card" data-clip="4" data-caption="Accesorii"></div>
-      <div class="card" data-clip="5" data-caption="Produs 5"></div>
-      <div class="card" data-clip="6" data-caption="Produs 6"></div>
-      <div class="card" data-clip="7" data-caption="Produs 7"></div>
-      <div class="card" data-clip="8" data-caption="Produs 8"></div>
+      <!-- 8 sloturi, fara etichete -->
+      <div class="card" data-clip="1"></div>
+      <div class="card" data-clip="2"></div>
+      <div class="card" data-clip="3"></div>
+      <div class="card" data-clip="4"></div>
+      <div class="card" data-clip="5"></div>
+      <div class="card" data-clip="6"></div>
+      <div class="card" data-clip="7"></div>
+      <div class="card" data-clip="8"></div>
     </div>
   </div>
 </section>
@@ -345,7 +345,6 @@
   // Populeaza sloturile cu placeholder + <video> care incarca videos/clip-N.mp4
   document.querySelectorAll('#gallery .card').forEach(card => {
     const n = card.dataset.clip;
-    const cap = card.dataset.caption || '';
     const v = document.createElement('video');
     v.src = 'videos/clip-' + n + '.mp4';
     v.poster = 'videos/poster-' + n + '.jpg';
@@ -356,12 +355,6 @@
     slot.className = 'slot';
     slot.innerHTML = '<div class="play">▶</div>';
     card.appendChild(slot);
-
-    if (cap){
-      const c = document.createElement('div');
-      c.className = 'cap'; c.textContent = cap;
-      card.appendChild(c);
-    }
 
     // hover preview (mut), click = play cu sunet
     card.addEventListener('mouseenter', () => v.play().catch(()=>{}));

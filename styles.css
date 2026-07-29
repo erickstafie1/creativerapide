@@ -49,7 +49,7 @@ header{
 .brand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em;color:var(--ink)}
 .brand b{color:var(--accent);font-weight:800}
 .nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{color:var(--ink-soft);font-size:14px;position:relative;padding:4px 0}
+.nav-links a:not(.btn){color:var(--ink-soft);font-size:14px;position:relative;padding:4px 0}
 .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:var(--accent);transition:right .25s ease}
 .nav-links a:not(.btn):hover{color:var(--ink)}
 .nav-links a:not(.btn):hover::after{right:0}
@@ -62,8 +62,8 @@ header{
   transition:transform .18s ease,background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;
   white-space:nowrap;
 }
-.btn-dark{background:var(--ink);color:var(--bg)}
-.btn-dark:hover{background:var(--ink-soft);color:var(--bg);transform:translateY(-1px);box-shadow:0 12px 26px rgba(156,107,46,.28)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink-soft);color:#fff;transform:translateY(-1px);box-shadow:0 12px 26px rgba(156,107,46,.28)}
 .btn-ghost{border-color:var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--ink);background:rgba(27,23,16,.03)}
 .nav .btn{padding:10px 20px}

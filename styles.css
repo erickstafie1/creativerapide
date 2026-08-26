@@ -311,7 +311,7 @@ section.soft{background:var(--bg-soft)}
 .final .hero-cta{margin-top:8px}
 
 footer{border-top:1px solid var(--line-soft);padding:0}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding:56px 0 44px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-top:56px;padding-bottom:44px}
 @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;row-gap:36px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 .footer-col{display:flex;flex-direction:column;gap:11px}

@@ -270,12 +270,12 @@ section.soft{background:var(--bg-soft)}
 /* ---- why ---- */
 .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:820px){.why{grid-template-columns:1fr}}
-.why .item,.afiliere .item,.offer .item{background:var(--card);border:1px solid var(--line-soft);border-radius:16px;padding:28px;
+.why .item,.contact-options .item,.offer .item{background:var(--card);border:1px solid var(--line-soft);border-radius:16px;padding:28px;
   box-shadow:0 1px 2px rgba(10,10,10,.03);transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
-.why .item:hover,.afiliere .item:hover,.offer .item:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 20px 40px rgba(10,10,10,.1)}
-.why .item .ico,.afiliere .item .ico,.offer .item .ico{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
-.why .item h3,.afiliere .item h3,.offer .item h3{font-family:var(--display);font-weight:700;font-size:21px;margin:14px 0 8px;color:var(--ink)}
-.why .item p,.afiliere .item p,.offer .item p{color:var(--muted);margin:0;font-size:15px}
+.why .item:hover,.contact-options .item:hover,.offer .item:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 20px 40px rgba(10,10,10,.1)}
+.why .item .ico,.contact-options .item .ico,.offer .item .ico{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.why .item h3,.contact-options .item h3,.offer .item h3{font-family:var(--display);font-weight:700;font-size:21px;margin:14px 0 8px;color:var(--ink)}
+.why .item p,.contact-options .item p,.offer .item p{color:var(--muted);margin:0;font-size:15px}
 
 /* ---- proces ---- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;background:var(--card)}
@@ -287,33 +287,17 @@ section.soft{background:var(--bg-soft)}
 .step h3{font-family:var(--display);font-weight:700;font-size:18px;margin:12px 0 6px;color:var(--ink)}
 .step p{color:var(--muted);font-size:14px;margin:0}
 
-/* ---- pret ---- */
-.price-solo{max-width:460px;margin:0 auto}
-.plan{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;padding:32px;display:flex;flex-direction:column;
-  box-shadow:0 1px 2px rgba(10,10,10,.03);
-  transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);cursor:default}
-.plan:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 26px 50px rgba(10,10,10,.14)}
-.plan.feat{border-color:var(--ink);background:linear-gradient(180deg,rgba(255,90,0,.05),var(--card))}
-.plan.feat:hover{transform:translateY(-10px);box-shadow:0 30px 58px rgba(10,10,10,.16)}
-.plan .tag{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);transition:color .3s ease}
-.plan.feat .tag{color:var(--accent)}
-.plan:hover .tag{color:var(--accent)}
-.plan .price{font-family:var(--display);font-weight:800;font-size:42px;margin:16px 0 4px;letter-spacing:-.02em;color:var(--ink)}
-.plan .price span{font-size:16px;color:var(--muted);font-weight:400}
-.plan ul{list-style:none;padding:0;margin:20px 0 26px;display:flex;flex-direction:column;gap:11px}
-.plan li{font-size:15px;color:var(--ink-soft);display:flex;gap:10px}
-.plan li::before{content:"—";color:var(--accent)}
-.plan .btn{justify-content:center;margin-top:auto}
-
 /* ---- call cta (programeaza un apel) ---- */
 .call-cta{max-width:480px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--line-soft);
   border-radius:18px;padding:40px 32px;box-shadow:0 1px 2px rgba(10,10,10,.03)}
 .call-cta .eyebrow{display:block;margin-bottom:12px}
 .call-cta p{color:var(--ink-soft);font-size:16px;margin:0 0 26px;line-height:1.55}
 
-/* ---- afiliere ---- */
-.afiliere{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-@media(max-width:820px){.afiliere{grid-template-columns:1fr}}
+/* ---- contact options (apel / instagram) ---- */
+.contact-options{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:820px){.contact-options{grid-template-columns:1fr}}
+.contact-options .item{display:flex;flex-direction:column;align-items:flex-start}
+.contact-options .item .btn{margin-top:20px}
 
 /* ---- final cta (inverted, high-contrast) ---- */
 .final{text-align:center;padding:110px 0;background:var(--ink);border-top:none;position:relative;overflow:hidden}
@@ -322,6 +306,9 @@ section.soft{background:var(--bg-soft)}
 .final p{color:var(--g3);max-width:46ch;margin:18px auto 32px}
 .final .btn-dark{background:#fff;color:var(--ink);border-color:#fff}
 .final .btn-dark:hover{background:var(--g1);color:var(--ink);transform:translateY(-2px);box-shadow:0 16px 34px rgba(255,255,255,.16)}
+.final .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.final .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.final .hero-cta{margin-top:8px}
 
 footer{border-top:1px solid var(--line-soft);padding:0}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding:56px 0 44px}

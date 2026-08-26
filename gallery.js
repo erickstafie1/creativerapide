@@ -1,9 +1,12 @@
-// Populeaza sloturile din galerie cu <video> care incarca videos/clip-N.mp4
-document.querySelectorAll('.grid .card[data-clip]').forEach(card => {
-  const n = card.dataset.clip;
+// Populeaza sloturile din galerie cu <video> care incarca videos/clip-N.mp4 sau videos/review-N.mp4
+document.querySelectorAll('.card[data-clip], .card[data-review]').forEach(card => {
+  const isReview = card.dataset.review !== undefined;
+  const n = isReview ? card.dataset.review : card.dataset.clip;
+  const base = isReview ? 'review' : 'clip';
+  const posterBase = isReview ? 'review-poster' : 'poster';
   const v = document.createElement('video');
-  v.src = 'videos/clip-' + n + '.mp4';
-  v.poster = 'videos/poster-' + n + '.jpg';
+  v.src = 'videos/' + base + '-' + n + '.mp4';
+  v.poster = 'videos/' + posterBase + '-' + n + '.jpg';
   v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'metadata';
   card.appendChild(v);
 

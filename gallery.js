@@ -1,5 +1,5 @@
 // Populeaza sloturile din galerie cu <video> care incarca videos/clip-N.mp4
-document.querySelectorAll('#gallery .card').forEach(card => {
+document.querySelectorAll('.grid .card[data-clip]').forEach(card => {
   const n = card.dataset.clip;
   const v = document.createElement('video');
   v.src = 'videos/clip-' + n + '.mp4';

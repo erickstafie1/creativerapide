@@ -9,10 +9,12 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div class="progress-bar"></div>
 
 <header>
   <div class="wrap nav">
@@ -30,17 +32,22 @@
 
 <!-- INTRO -->
 <section class="page-hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="eyebrow">Portofoliu</span>
-    <h1>Reclame livrate clienților<br>din nișa COD.</h1>
-    <p class="lede">Fiecare clip de mai jos a fost făcut pentru un magazin cash on delivery real, cu produsul și oferta lui. Apasă pe un clip pentru redare cu sunet.</p>
+    <span class="eyebrow fade-in-up d1">Portofoliu</span>
+    <h1 class="split-h1">
+      <span class="line"><span class="inner">Reclame livrate clienților</span></span>
+      <span class="line"><span class="inner">din nișa COD.</span></span>
+    </h1>
+    <p class="lede fade-in-up d2">Fiecare clip de mai jos a fost făcut pentru un magazin cash on delivery real, cu produsul și oferta lui. Apasă pe un clip pentru redare cu sunet.</p>
   </div>
 </section>
 
 <!-- PORTOFOLIU -->
 <section id="portofoliu" style="border-top:none">
   <div class="wrap">
-    <div class="grid" id="gallery">
+    <div class="grid reveal-group" id="gallery">
       <div class="card" data-clip="1"></div>
       <div class="card" data-clip="2"></div>
       <div class="card" data-clip="3"></div>
@@ -58,10 +65,10 @@
 
 <!-- FINAL CTA -->
 <section class="final">
-  <div class="wrap">
+  <div class="wrap rv">
     <span class="eyebrow">Hai să începem</span>
     <h2>Prima ta reclamă, gata în maxim 24h.</h2>
-    <p>Patru editori specializați, 8.600+ reclame făcute, 15 RON creativa. Scrie-ne pe Instagram cu produsul tău și începem azi.</p>
+    <p>Patru editori specializați, 8.600+ reclame făcute, 20 RON creativa. Scrie-ne pe Instagram cu produsul tău și începem azi.</p>
     <a class="btn btn-dark" href="https://ig.me/m/CreativeRapide" target="_blank" rel="noopener">Scrie-ne pe @CreativeRapide →</a>
   </div>
 </section>
@@ -81,5 +88,6 @@
 
 <script src="nav.js"></script>
 <script src="gallery.js"></script>
+<script src="interactions.js"></script>
 </body>
 </html>

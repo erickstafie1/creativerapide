@@ -46,7 +46,25 @@ function initCounters() {
   document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
 }
 
+// Sagetile caruselului de recenzii deruleaza cate un slide.
+function initCarousels() {
+  document.querySelectorAll('.reviews-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.reviews-track');
+    const prev = carousel.querySelector('.carousel-btn.prev');
+    const next = carousel.querySelector('.carousel-btn.next');
+    if (!track) return;
+    const scrollByOne = dir => {
+      const slide = track.querySelector('.review-slide');
+      const amount = slide ? slide.getBoundingClientRect().width + 20 : track.clientWidth;
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    if (prev) prev.addEventListener('click', () => scrollByOne(-1));
+    if (next) next.addEventListener('click', () => scrollByOne(1));
+  });
+}
+
 initProgress();
 initHeader();
 initReveal();
 initCounters();
+initCarousels();

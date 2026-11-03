@@ -77,6 +77,11 @@
 .price li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
 .price .btn{justify-content:center}
 .price-note{margin:22px 0 0;font-size:14px;color:var(--muted)}
+.price.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:32px}
+.price.wide>div{flex:1}
+.price.wide ul{flex:1;margin:0}
+.price.wide .btn{flex:none}
+@media(max-width:900px){.price.wide{flex-direction:column;align-items:stretch;gap:16px}}
 
 .faq{max-width:820px}
 .faq details{border-bottom:1px solid var(--line-soft);padding:0}
@@ -326,41 +331,54 @@
     <div class="sec-head rv">
       <span class="eyebrow">Prețuri</span>
       <h2>Prețuri clare. Poți începe cu o singură reclamă.</h2>
-      <p>Plătești pe reclamă livrată, fără abonamente și fără costuri ascunse. Cu cât comanzi mai mult, cu atât scade prețul.</p>
+      <p>Plătești pe reclamă livrată, fără abonamente și fără costuri ascunse. Alegi treapta potrivită, iar la volum mare primești preț personalizat.</p>
     </div>
     <div class="price-grid reveal-group">
       <div class="price">
-        <span class="tag">1 – 49 reclame</span>
+        <span class="tag">Standard</span>
         <div class="amt">20 RON <small>/ reclamă</small></div>
         <p class="for">Ideal ca să testezi calitatea.</p>
         <ul>
-          <li>Livrare în maximum 24h</li>
+          <li>Livrare standard, în maximum 24h</li>
           <li>Verificare dublă de calitate</li>
           <li>O rundă de revizii inclusă</li>
         </ul>
-        <a class="btn btn-accent" href="https://wa.me/40732512405?text=Salut!%20Vreau%20s%C4%83%20comand%20reclame%20(1-49)." target="_blank" rel="noopener">Comandă pe WhatsApp →</a>
+        <a class="btn btn-accent" href="https://wa.me/40732512405?text=Salut!%20Vreau%20reclame%20Standard%20(20%20RON)." target="_blank" rel="noopener">Comandă pe WhatsApp →</a>
       </div>
       <div class="price feat">
-        <span class="tag">50+ reclame</span>
-        <div class="amt">19 RON <small>/ reclamă</small></div>
-        <p class="for">Pentru magazinele care testează constant creative noi.</p>
+        <span class="tag">Plus</span>
+        <div class="amt">30 RON <small>/ reclamă</small></div>
+        <p class="for">Pentru reclame care trebuie să plece repede pe TikTok și Meta.</p>
         <ul>
-          <li>Tot ce include pachetul de bază</li>
-          <li>Preț mai mic la fiecare reclamă</li>
-          <li>Același editor și aceleași reguli, de la o comandă la alta</li>
+          <li>Livrare înaintea celorlalte comenzi</li>
+          <li>2 formate: TikTok și Meta</li>
+          <li>Reclamă personalizabilă după brandul tău</li>
+          <li>2 runde de revizii</li>
         </ul>
-        <a class="btn btn-accent" href="https://wa.me/40732512405?text=Salut!%20Vreau%20s%C4%83%20comand%2050%2B%20reclame." target="_blank" rel="noopener">Comandă pe WhatsApp →</a>
+        <a class="btn btn-accent" href="https://wa.me/40732512405?text=Salut!%20Vreau%20reclame%20Plus%20(30%20RON)." target="_blank" rel="noopener">Comandă pe WhatsApp →</a>
       </div>
       <div class="price">
-        <span class="tag">100+ reclame</span>
-        <div class="amt">Preț personalizat</div>
-        <p class="for">Pentru volume mari și colaborări pe termen lung.</p>
+        <span class="tag">Performanță</span>
+        <div class="amt">35 RON <small>/ reclamă</small></div>
+        <p class="for">Pentru cine vrea să testeze mai multe începuturi și să găsească reclama câștigătoare.</p>
         <ul>
-          <li>Discutăm un pachet pe măsura volumului tău</li>
+          <li>Tot ce include Plus</li>
+          <li>3 hook-uri la aceeași reclamă, pentru mai mult testing</li>
+        </ul>
+        <a class="btn btn-dark" href="https://wa.me/40732512405?text=Salut!%20Vreau%20reclame%20Performan%C8%9B%C4%83%20(35%20RON)." target="_blank" rel="noopener">Comandă pe WhatsApp →</a>
+      </div>
+      <div class="price wide">
+        <div>
+          <span class="tag">Creative multe</span>
+          <div class="amt">Pachet personalizat</div>
+          <p class="for">Pentru magazine care testează constant creative noi. De la 50 de reclame Standard, prețul scade la 19 RON, iar pentru volume mari construim un pachet pe măsura ta.</p>
+        </div>
+        <ul>
+          <li>Alegem împreună mixul de reclame</li>
           <li>Plan de livrare pe săptămână</li>
           <li>Persoană de contact dedicată</li>
         </ul>
-        <a class="btn btn-dark" href="https://wa.me/40732512405?text=Salut!%20Vreau%20un%20pachet%20pentru%20100%2B%20reclame." target="_blank" rel="noopener">Cere oferta →</a>
+        <a class="btn btn-dark" href="https://wa.me/40732512405?text=Salut!%20Vreau%20un%20pachet%20personalizat%20pentru%20mai%20multe%20reclame." target="_blank" rel="noopener">Cere oferta →</a>
       </div>
     </div>
     <p class="price-note rv">Prețurile sunt în RON, per reclamă video.</p>
@@ -385,11 +403,11 @@
       </details>
       <details>
         <summary>Și dacă nu-mi place reclama?</summary>
-        <p>Fiecare reclamă include o rundă de revizii. Ne spui ce vrei schimbat și ajustăm, fără cost suplimentar.</p>
+        <p>Standard include o rundă de revizii, iar Plus și Performanță includ două. Ne spui ce vrei schimbat și ajustăm, fără cost suplimentar.</p>
       </details>
       <details>
         <summary>Cât costă?</summary>
-        <p>20 RON pe reclamă la 1–49 de reclame, 19 RON pe reclamă de la 50 în sus, iar pentru peste 100 de reclame discutăm un preț personalizat.</p>
+        <p>Standard costă 20 RON pe reclamă, Plus 30 RON și Performanță 35 RON. De la 50 de reclame Standard prețul scade la 19 RON, iar pentru volume mari facem un pachet personalizat.</p>
       </details>
       <details>
         <summary>Emiteți factură?</summary>

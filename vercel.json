@@ -1,5 +1,13 @@
 {
   "framework": null,
   "buildCommand": "echo no build needed",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/index", "destination": "/home", "permanent": true },
+    { "source": "/index.html", "destination": "/home", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" }
+  ]
 }

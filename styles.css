@@ -246,6 +246,7 @@ section.soft{background:var(--bg-soft)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media(min-width:901px){#gallery .card:nth-last-child(2):nth-child(4n+1){grid-column-start:2}}
 .card{
   position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;
   background:var(--ink);border:1px solid var(--line-soft);cursor:pointer;

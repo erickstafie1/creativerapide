@@ -5,8 +5,8 @@ document.querySelectorAll('.card[data-clip], .card[data-review]').forEach(card =
   const base = isReview ? 'review' : 'clip';
   const posterBase = isReview ? 'review-poster' : 'poster';
   const v = document.createElement('video');
-  v.src = 'videos/' + base + '-' + n + '.mp4';
-  v.poster = 'videos/' + posterBase + '-' + n + '.jpg';
+  v.src = '/videos/' + base + '-' + n + '.mp4';
+  v.poster = '/videos/' + posterBase + '-' + n + '.jpg';
   v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'metadata';
   card.appendChild(v);
 

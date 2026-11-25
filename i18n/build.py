@@ -16,10 +16,16 @@ def build(l):
     for p in PAGES:
         soup=BeautifulSoup(open(os.path.join(ROOT,p+'.html'),encoding='utf-8').read(),'html.parser')
         miss=set()
+        cur=m['currency']
+        def money(x):
+            return re.sub(r'(?<![\d,.])(\d+) RON',lambda mo:(cur['map'][mo.group(1)]+' '+cur['symbol']) if mo.group(1) in cur['map'] else mo.group(0),x)
         def T(s):
             k=s.strip()
-            if k in tr: return s.replace(k,tr[k])
+            if k in tr: return s.replace(k,money(tr[k]))
             return None
+        for t in soup.find_all(attrs={'data-suffix':True}):
+            if t['data-suffix'].strip()=='RON':
+                t['data-count']=cur['count'].get(t['data-count'],t['data-count']); t['data-suffix']=' '+cur['symbol']
         for n in soup.find_all(string=True):
             if isinstance(n,Comment) or n.parent.name in('script','style'): continue
             if n.strip():
@@ -39,7 +45,7 @@ def build(l):
             h=a['href']
             if 'wa.me' in h and 'text=' in h:
                 base,txt=h.split('text=',1); ro=unquote(txt)
-                a['href']=base+'text='+quote(m['wa'].get(ro,ro))
+                a['href']=base+'text='+quote(money(m['wa'].get(ro,ro)))
         def fix(v,l):
             b=v.split('#')[0].split('?')[0]; frag=v[len(b):]
             if b in('/home','/'): return ('/%s/'%l)+frag
@@ -78,6 +84,8 @@ def build(l):
                     if isinstance(o,dict):
                         for k,v in list(o.items()):
                             if k=='areaServed': o[k]=m['areaServed']
+                            elif k=='priceCurrency': o[k]=cur['code']
+                            elif k=='price': o[k]=cur['map'].get(str(v),v).replace(',','.')
                             elif k=='inLanguage': o[k]=l
                             elif k=='url' and isinstance(v,str) and v.startswith(SITE): o[k]=SITE+pagepath(p,l)
                             else: tw(v)
